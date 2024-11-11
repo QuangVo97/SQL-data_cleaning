@@ -36,23 +36,15 @@ set full_name = rtrim(LTRIM(full_name))
 
 ### Check blank data at all column and update as 'Null'
 ```SQL
-update club_member_info_cleaned
-set AGE = 'Null' 
-	 ,martial_status = 'Null'
-	 ,email = 'Null'
-	 ,phone = 'Null'
-	 ,full_address = 'Null'
-	 ,job_title = 'Null'
-	 ,membership_date = 'Null'
-WHERE
-	 AGE = ''  
-	OR martial_status = ''
-	OR email = ''
-	OR phone = ''
-	OR full_address = ''
-	OR job_title = ''
-	OR membership_date = ''
+UPDATE club_member_info_cleaned SET age = 'Null' WHERE age like ''
+UPDATE club_member_info_cleaned SET martial_status = 'Null' WHERE age like ''
+UPDATE club_member_info_cleaned SET email = 'Null' WHERE age like ''
+UPDATE club_member_info_cleaned SET phone = 'Null' WHERE age like ''
+UPDATE club_member_info_cleaned SET full_address = 'Null' WHERE age like ''
+UPDATE club_member_info_cleaned SET job_title = 'Null' WHERE age like ''
 ```
+
+
 
 
 
