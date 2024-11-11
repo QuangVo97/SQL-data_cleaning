@@ -3,7 +3,7 @@
 This is an educational project on data cleaning and preparation using SQL. The original database in CSV format is located in the file club_member_info.csv. 
 Here, we will explore the steps that need to be applied to obtain a cleansed version of the dataset.
 
-#DATA BEFORE CLEANING
+###DATA BEFORE CLEANING
 ```SQL
 select * from club_member_info cmi limit 10;
 ```
@@ -33,3 +33,35 @@ set full_name = UPPER(full_name)
 update club_member_info_cleaned 
 set full_name = rtrim(LTRIM(full_name))
 ```
+
+### Check blank data at all column and update as 'Null'
+```SQL
+update club_member_info_cleaned
+set AGE = 'Null' 
+	 ,martial_status = 'Null'
+	 ,email = 'Null'
+	 ,phone = 'Null'
+	 ,full_address = 'Null'
+	 ,job_title = 'Null'
+	 ,membership_date = 'Null'
+WHERE
+	 AGE = ''  
+	OR martial_status = ''
+	OR email = ''
+	OR phone = ''
+	OR full_address = ''
+	OR job_title = ''
+	OR membership_date = ''
+```
+
+
+
+
+
+
+
+
+
+
+
+
